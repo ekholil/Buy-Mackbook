@@ -52,8 +52,7 @@ document.getElementById('8gb').addEventListener('click', function(){
    updateCost('8gb')  
 })
 document.getElementById('16gb').addEventListener('click', function(){
- updateCost('16gb')
-    //memoryCost.innerText = 180;    
+ updateCost('16gb')    
 })
 // storage cost
 document.getElementById('256gb').addEventListener('click', function(){
@@ -67,7 +66,7 @@ updateCost('1tb')
 })
 // delivery cost 
 document.getElementById('free-delivery').addEventListener('click', function(){
-    updateCost('free-delivery')
+updateCost('free-delivery')
 })
 document.getElementById('delivery20').addEventListener('click', function(){
 updateCost('delivery20')
@@ -76,20 +75,15 @@ updateCost('delivery20')
 
 
 // promo code 
-
-    function promo(){
-        const subTotal = calcutaleTotal()
-        if(promoInput.value == 'stevekaku'){
-            total.innerText = subTotal * .80
-            promoInput.value = '';
-            promoApply.setAttribute('disabled', true)
-        } else{
-            total.innerText = subTotal;
-        }
-    }
-
 promoApply.addEventListener('click', function(){
-    promo()
+    const subTotal = calcutaleTotal()
+    if(promoInput.value.toLowerCase() == 'stevekaku'){
+        total.innerText = subTotal * .80
+        promoInput.value = '';
+        promoApply.setAttribute('disabled', true)
+    } else{
+        total.innerText = subTotal;
+    }
 })
 
 
